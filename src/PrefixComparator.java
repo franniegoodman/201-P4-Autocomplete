@@ -40,8 +40,28 @@ public class    PrefixComparator implements Comparator<Term> {
      * @return < 0 if v < w, == 0 if v == w, and > 0 if v > w
      */
     public int compare(Term v, Term w) {
-        // change this to use myPrefixSize as specified,
-        // replacing line below with code
-        return v.getWord().compareTo(w.getWord());
+        // if v or w < size, compare # of chars in smaller term
+        // else compare size chars
+        // while loop maybe?? iterate until one char is greater than another, break and return
+        String myV = v.getWord();
+        String myW = w.getWord();
+        int limit = myPrefixSize;
+        if (myV.length() < myPrefixSize || myW.length() < myPrefixSize){
+            limit = Math.min(myV.length(), myW.length());
+        }
+        int dex = 0;
+        while (dex < limit){
+            if (myV.charAt(dex) > myW.charAt(dex)) return 1;
+            if (myV.charAt(dex) < myW.charAt(dex)) return -1;
+            dex++;
+        }
+        //checks if prefixes equal but one word terminates and the other doesn't
+        if (dex != myPrefixSize){
+            if (myV.length() == dex) return -1;
+            return 1;
+        }
+        return 0;
+        }
+
     }
-}
+
