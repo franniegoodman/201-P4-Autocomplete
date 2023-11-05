@@ -82,6 +82,29 @@ public class BinaryBenchmark {
         }
         return -1;
 	}
+    public int lastMatch(List<String> list, String target, Comparator<String> comp) {
+			
+            int low = 0;
+			int high = list.size() - 1;
+			int foundAt = -1; 
+				
+			while (low <= high) {
+				int mid = low + (high - low) / 2;
+				int value = comp.compare(list.get(mid), target);
+				if (value < 0) {
+					low = mid + 1;
+				}
+				else if (value > 0) {
+					high = mid - 1;
+				}
+				else {
+					foundAt = mid;
+					low = mid + 1;
+				}
+	
+			}
+			return foundAt;
+	}
 	public void results() {
 		String target = "apple";
 		CountedComparator<String> comp = new CountedComparator<>();
