@@ -48,7 +48,6 @@ public class HashListAutocomplete implements Autocompletor {
         }
     }
 
-
     @Override
     public int sizeInBytes() {
 		return mySize;

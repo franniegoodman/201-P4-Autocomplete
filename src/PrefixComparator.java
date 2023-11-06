@@ -57,7 +57,8 @@ public class    PrefixComparator implements Comparator<Term> {
         }
         //checks if prefixes equal but one word terminates and the other doesn't
         if (dex != myPrefixSize){
-            if (myV.length() == dex) return -1;
+            if (myV.length() == myW.length()) return 0;
+            else if (myV.length() == dex) return -1;
             return 1;
         }
         return 0;
