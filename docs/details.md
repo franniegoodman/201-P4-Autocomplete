@@ -190,7 +190,7 @@ public class HashListAutocomplete implements Autocompletor {
 
 There are four methods you will need to implement, stubs of which are provided in the starter code: `initialize`, `topMatches`, and `sizeInBytes` (details below).
 
-The class should maintain a `HashMap` of _every possible prefix_ (for each term) (up to the number of characters specified by a constant `MAX_PREFIX` that you should set to 10 as shown. The key in the map is a prefix/substring. The value for each prefix key is a weight-sorted list of `Term` objects that share that prefix. The diagram below shows part of such a `HashMap`. Three prefixes are shown---the corresponding values are shown as a weight-sorted list of `Term` objects.
+The class should maintain a `HashMap` of _every possible prefix_ (for each term) up to the number of characters specified by a constant `MAX_PREFIX` that you should set to 10 as shown. The key in the map is a prefix/substring. The value for each prefix key is a weight-sorted list of `Term` objects that share that prefix. The diagram below shows part of such a `HashMap`. Three prefixes are shown---the corresponding values are shown as a weight-sorted list of `Term` objects.
 
 |Prefix|Term Objects|
 | --   |    ----    |
